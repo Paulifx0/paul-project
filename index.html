@@ -44,6 +44,45 @@
 @media (max-width:760px){.hero-portrait{width:min(93%,430px);max-width:430px;justify-self:center}.portrait-frame{width:100%;aspect-ratio:.93}.portrait-footer strong{font-size:clamp(23px,6vw,37px)}.portrait-footer{bottom:25px}}
 @media (max-width:520px){.hero-portrait{width:100%;max-width:390px}.portrait-frame{aspect-ratio:.9;border-radius:45% 45% 6px 6px}.portrait-footer{left:22px;right:22px;bottom:22px}.portrait-topline{top:21px;left:22px;right:22px}.portrait-footer strong{font-size:29px}.portrait-footer-mark{width:34px;height:34px}}
 
+
+/* Academic research profile: responsive, consistent with the original portfolio */
+.research-section{background:#e8eee6;border-top:1px solid #c6d5ca;border-bottom:1px solid #c6d5ca;padding:112px 0 118px}
+.research-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(270px,.65fr);gap:40px;align-items:end;margin-bottom:40px}
+.research-head h2{font-size:clamp(42px,5.6vw,86px);letter-spacing:-.065em;line-height:.98;margin:13px 0 0;max-width:810px}
+.research-head h2 em{font-family:Georgia,serif;font-weight:400;color:#376548}
+.research-head>p{color:#526457;line-height:1.7;font-size:15px;max-width:410px;margin:0 0 4px}
+.research-focus{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
+.research-focus span{border:1px solid #b5c8b8;background:#f6f7f0;color:#34503e;border-radius:30px;padding:10px 14px;font-size:11px;font-weight:750;letter-spacing:.02em}
+.research-detail{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:22px}
+.research-feature{background:#15231e;border-radius:16px;padding:34px;color:#f6f8ef}
+.research-feature .small-caps{color:#b9f29a;margin:0 0 13px}
+.research-feature h3{font-size:clamp(27px,3vw,40px);line-height:1.07;letter-spacing:-.045em;margin:0 0 19px}
+.research-feature p{color:#d5e0d8;font-size:14px;line-height:1.78}
+.research-kicker{display:block;color:#a9bfac;font-size:12px;margin-top:-4px;margin-bottom:20px}
+.research-feature dl{display:grid;grid-template-columns:1fr 1fr;gap:13px;border-top:1px solid #45574a;padding-top:18px;margin:25px 0}
+.research-feature dt{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#a6bda6;font-weight:800;margin-bottom:6px}
+.research-feature dd{margin:0;color:#f6f7ed;line-height:1.45;font-size:13px}
+.research-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:23px}
+.research-links a{display:inline-flex;gap:9px;align-items:center;border-radius:7px;border:1px solid #819781;padding:12px 14px;font-size:12px;font-weight:800;color:#f4f9ed}
+.research-links a:first-child{background:var(--lime);color:#14221b;border-color:var(--lime)}
+.research-links a:hover{transform:translateY(-2px)}
+.research-right{display:flex;flex-direction:column;gap:18px}
+.research-result{background:#f9faf5;border:1px solid #c5d2c7;padding:28px;border-radius:15px}
+.research-result>p:first-child{margin:0 0 13px;font-size:11px;letter-spacing:.11em;font-weight:850;color:#44634c;text-transform:uppercase}
+.research-result strong{display:block;font-size:clamp(33px,4vw,51px);letter-spacing:-.055em;color:#1b3d2b;line-height:1.1}
+.research-result span{display:block;font-size:13px;color:#536458;line-height:1.7;margin-top:9px}
+.research-limits{border-left:4px solid #538267;background:#f0f5ec;padding:19px 23px;border-radius:0 11px 11px 0}
+.research-limits strong{font-size:13px}
+.research-limits p{margin:7px 0 0;color:#536357;font-size:13px;line-height:1.7}
+.research-images{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+.research-images figure{margin:0;background:#fafbf6;border:1px solid #cad9cd;border-radius:12px;overflow:hidden}
+.research-images img{display:block;width:100%;height:245px;object-fit:contain;padding:12px;background:#fff}
+.research-images figcaption{font-size:12px;line-height:1.6;color:#526558;padding:15px 18px;border-top:1px solid #e2e8df}
+.research-foot{font-size:12px;line-height:1.7;color:#58665b;margin:21px 0 0}
+@media(max-width:1120px){.nav-links{gap:17px}.nav-links a{font-size:11px}.research-head{grid-template-columns:1fr 280px}}
+@media(max-width:760px){.research-section{padding:74px 0}.research-head,.research-detail{grid-template-columns:1fr}.research-head{gap:17px}.research-head>p{max-width:none}.research-feature{padding:24px}.research-result{padding:23px}.research-images{grid-template-columns:1fr}.research-images img{height:auto;max-height:280px}.research-feature dl{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.research-feature dl{grid-template-columns:1fr}.research-head h2{font-size:44px}}
+
 </style>
   
 </head>
@@ -57,6 +96,7 @@
       <div class="nav-links" id="nav-links">
         <a href="#about">About</a>
         <a href="#work">Projects</a>
+        <a href="#research">Research</a>
         <a href="#expertise">Skills</a>
         <a href="#journey">Experience</a>
         <a href="#contact" class="nav-contact">Let's talk <span aria-hidden="true">↗</span></a>
@@ -109,9 +149,68 @@
       </div>
     </section>
 
+
+    <section class="section research-section" id="research" aria-labelledby="research-heading">
+      <div class="wrap">
+        <div class="research-head">
+          <div><p class="section-index">02 / RESEARCH PROFILE</p><h2 id="research-heading">Interested in the <em>questions behind the data.</em></h2></div>
+          <p>My academic interests connect analytical measurement with computational methods: developing accessible sensing tools, interpreting multivariate signals, and understanding when a model can be trusted.</p>
+        </div>
+        <div class="research-focus" aria-label="Research interests">
+          <span>Analytical spectroscopy</span><span>Chemometrics &amp; multivariate analysis</span><span>Low-cost sensing</span><span>Scientific Python</span><span>Model validation</span><span>Applied machine learning</span>
+        </div>
+        <div class="research-detail">
+          <article class="research-feature" aria-labelledby="research-project-heading">
+            <p class="small-caps">MSc RESEARCH · KINGSTON UNIVERSITY LONDON · 2026</p>
+            <h3 id="research-project-heading">Low-cost multispectral sensing for solvent-waste monitoring</h3>
+            <span class="research-kicker">Project 78 · Supervised by Dr Gemma Shearman</span>
+            <p><strong>Research question:</strong> Could an inexpensive four-wavelength optical sensor support screening and trend monitoring of aqueous solvent waste from teaching laboratories?</p>
+            <p><strong>Approach:</strong> I developed a Raspberry Pi Pico-based sensor using LEDs at 465, 625, 850 and 940 nm and a TSL2591 light sensor. I analysed experimental measurements in Python using calibration, PCA, partial least squares (PLS) regression and cross-validation, with reference chromatography used for comparison.</p>
+            <dl>
+              <div><dt>Experimental system</dt><dd>3D-printed optical housing, LED illumination, cuvette measurements, CSV acquisition</dd></div>
+              <div><dt>Data analysis</dt><dd>Python, pandas, NumPy, scikit-learn, PCA, PLS, VIP wavelength selection</dd></div>
+              <div><dt>Research emphasis</dt><dd>Calibration transfer, matrix effects, uncertainty and defensible validation</dd></div>
+              <div><dt>Research setting</dt><dd>MSc Analytical Chemistry, Kingston University London</dd></div>
+            </dl>
+            <div class="research-links">
+              <a href="https://github.com/Paulifx0/project-78-solvent-analysis" target="_blank" rel="noopener noreferrer">Read the analysis &amp; methods <span aria-hidden="true">↗</span></a>
+              <a href="#case-study">Project case study <span aria-hidden="true">↓</span></a>
+            </div>
+          </article>
+          <div class="research-right">
+            <div class="research-result">
+              <p>Promising within a defined calibration matrix</p>
+              <strong>Q² = 0.93</strong>
+              <span>A reduced PLS model using 625 and 940 nm achieved cross-validated RMSECV = 1.63% v/v for solvent-spiked waste in a fixed matrix.</span>
+            </div>
+            <div class="research-result">
+              <p>Important limitation</p>
+              <strong>Q² = −1.78</strong>
+              <span>Across different real waste samples, prediction did not generalise. Sample-to-sample matrix effects dominated the optical signal.</span>
+            </div>
+            <div class="research-limits">
+              <strong>What this taught me</strong>
+              <p>A high cross-validation score within a single matrix does not establish accuracy for unknown mixtures. Understanding limitations is part of meaningful research, not a failure to report.</p>
+            </div>
+          </div>
+        </div>
+        <div class="research-images">
+          <figure>
+            <img loading="lazy" width="850" height="520" src="https://raw.githubusercontent.com/Paulifx0/project-78-solvent-analysis/main/figures/enhanced_940_calibrations.png" alt="Experimental 940 nanometre calibration curves for ethanol, methanol and acetone">
+            <figcaption><strong>Calibration data.</strong> Comparing 940 nm optical response across pure-solvent standards.</figcaption>
+          </figure>
+          <figure>
+            <img loading="lazy" width="850" height="520" src="https://raw.githubusercontent.com/Paulifx0/project-78-solvent-analysis/main/figures/reduced_625_940_spike_pls_predictions.png" alt="Cross-validated predicted versus measured plot for reduced wavelength PLS model">
+            <figcaption><strong>Model validation.</strong> Reduced-wavelength PLS prediction for solvent spikes in a defined waste matrix.</figcaption>
+          </figure>
+        </div>
+        <p class="research-foot">The repository contains the analysis notebook, project figures, results and limitations. Raw sensor and reference datasets are not publicly included. Research interests describe areas I want to develop further, not claims of expertise or published research.</p>
+      </div>
+    </section>
+
     <section class="section projects-section" id="work" aria-labelledby="work-heading">
       <div class="wrap">
-        <div class="section-heading"><div><p class="section-index">02 / SELECTED WORK</p><h2 id="work-heading">Things I've <em>built & explored.</em></h2></div><p class="heading-note">A selection of hands-on research, analysis and growing technical work.</p></div>
+        <div class="section-heading"><div><p class="section-index">03 / SELECTED WORK</p><h2 id="work-heading">Things I've <em>built & explored.</em></h2></div><p class="heading-note">A selection of hands-on research, analysis and growing technical work.</p></div>
         <div class="project-filters" role="group" aria-label="Filter projects"><button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All work <span>03</span></button><button type="button" class="filter" data-filter="research" aria-pressed="false">Research <span>01</span></button><button type="button" class="filter" data-filter="data" aria-pressed="false">Data & Python <span>02</span></button></div>
 
         <div class="projects-grid">
@@ -141,11 +240,11 @@
       <div class="wrap case-layout"><div class="case-left"><p class="section-index">DEEP DIVE / PROJECT 78</p><h2 id="case-heading">Where the science <em>meets the data.</em></h2><a href="https://github.com/Paulifx0/project-78-solvent-analysis" target="_blank" rel="noopener noreferrer" class="button button-ink">View code & analysis <span aria-hidden="true">↗</span></a></div><div class="case-right"><p class="case-lead">A low-cost system using LEDs at <strong>465, 625, 850 and 940 nm</strong>, a light sensor and a Raspberry Pi Pico to explore optical response in aqueous solvent mixtures.</p><div class="case-metrics"><div><strong>4</strong><span>Optical wavelengths</span></div><div><strong>0.93</strong><span>Cross-validated Q² for a reduced PLS model on solvent-spiked waste</span></div><div><strong>2</strong><span>Selected wavelengths in that model</span></div></div><div class="case-steps"><div><span>01</span><p><strong>Measure</strong> — Build an optical setup, prepare standards and collect detector-response data.</p></div><div><span>02</span><p><strong>Analyse</strong> — Clean, visualise and interpret signals using Python, PCA, PLS and cross-validation.</p></div><div><span>03</span><p><strong>Validate limitations</strong> — Performance on one spiked waste matrix did not generalise to different real waste samples; matrix effects matter.</p></div></div><p class="case-note">The model score describes a specific cross-validation experiment, not a universal claim of solvent quantification accuracy. That distinction is a central finding of the project.</p></div></div>
     </section>
 
-    <section class="section skills-section" id="expertise" aria-labelledby="skills-heading"><div class="wrap"><div class="section-heading"><div><p class="section-index">03 / WHAT I BRING</p><h2 id="skills-heading">Science first. <em>Data always.</em></h2></div><p class="heading-note">I combine practical experimental thinking with tools for analysis and communication.</p></div><div class="skill-grid"><div class="skill-item"><span class="skill-number">01</span><div class="skill-symbol">⌁</div><h3>Analytical science</h3><p>Spectroscopy, calibration, quality control, measurement uncertainty and thoughtful experimental practice.</p><span class="skill-foot">UV–Vis · FTIR/NIR · QC</span></div><div class="skill-item"><span class="skill-number">02</span><div class="skill-symbol">◈</div><h3>Chemometrics</h3><p>Exploring multivariate signals and testing what a predictive model can — and cannot — support.</p><span class="skill-foot">PCA · PLS · Validation</span></div><div class="skill-item"><span class="skill-number">03</span><div class="skill-symbol">{ }</div><h3>Scientific programming</h3><p>Analysis notebooks for reproducible cleaning, visualisation, statistics and machine learning.</p><span class="skill-foot">Python · pandas · NumPy · scikit-learn</span></div><div class="skill-item"><span class="skill-number">04</span><div class="skill-symbol">✳</div><h3>Applied data thinking</h3><p>Turning complex evidence into clear insight, with growing interests in healthcare and scientific informatics.</p><span class="skill-foot">EDA · Communication · Data quality</span></div></div></div></section>
+    <section class="section skills-section" id="expertise" aria-labelledby="skills-heading"><div class="wrap"><div class="section-heading"><div><p class="section-index">04 / WHAT I BRING</p><h2 id="skills-heading">Science first. <em>Data always.</em></h2></div><p class="heading-note">I combine practical experimental thinking with tools for analysis and communication.</p></div><div class="skill-grid"><div class="skill-item"><span class="skill-number">01</span><div class="skill-symbol">⌁</div><h3>Analytical science</h3><p>Spectroscopy, calibration, quality control, measurement uncertainty and thoughtful experimental practice.</p><span class="skill-foot">UV–Vis · FTIR/NIR · QC</span></div><div class="skill-item"><span class="skill-number">02</span><div class="skill-symbol">◈</div><h3>Chemometrics</h3><p>Exploring multivariate signals and testing what a predictive model can — and cannot — support.</p><span class="skill-foot">PCA · PLS · Validation</span></div><div class="skill-item"><span class="skill-number">03</span><div class="skill-symbol">{ }</div><h3>Scientific programming</h3><p>Analysis notebooks for reproducible cleaning, visualisation, statistics and machine learning.</p><span class="skill-foot">Python · pandas · NumPy · scikit-learn</span></div><div class="skill-item"><span class="skill-number">04</span><div class="skill-symbol">✳</div><h3>Applied data thinking</h3><p>Turning complex evidence into clear insight, with growing interests in healthcare and scientific informatics.</p><span class="skill-foot">EDA · Communication · Data quality</span></div></div></div></section>
 
-    <section class="section journey-section" id="journey" aria-labelledby="journey-heading"><div class="wrap journey-layout"><div class="journey-title"><p class="section-index">04 / MY JOURNEY</p><h2 id="journey-heading">Built on <em>curiosity.</em><br>Grounded in science.</h2><p>My path from laboratory quality control into research and data analysis has shaped the way I work: precise in measurement, careful in interpretation and always ready to learn.</p></div><div class="timeline"><div class="timeline-entry"><span class="timeline-date">2026 — EXPECTED JAN 2027</span><div><h3>MSc Analytical Chemistry</h3><p class="timeline-place">Kingston University London</p><p>Advanced analytical techniques and a research project joining optical sensing, spectroscopy and computational analysis.</p></div></div><div class="timeline-entry"><span class="timeline-date">2024 — 2025</span><div><h3>Quality Control Officer</h3><p class="timeline-place">Colexa Biosensor Ltd · Lagos</p><p>Practical experience in quality processes, testing, traceable records and analytical measurements in a biosensor manufacturing environment.</p></div></div><div class="timeline-entry"><span class="timeline-date">OCT 2021 — APR 2022</span><div><h3>Industrial Trainee · Biochemistry</h3><p class="timeline-place">Nigerian Institute for Medical Research (NIMR) · Lagos, Nigeria</p><p>Completed industrial training in a biochemistry research setting, gaining insight into laboratory workflows and scientific research practice.</p></div></div><div class="timeline-entry"><span class="timeline-date">FOUNDATION</span><div><h3>BSc Chemistry</h3><p class="timeline-place">Olabisi Onabanjo University · Nigeria</p><p>Developed the scientific foundations that now inform my work in analytical chemistry and data.</p></div></div></div></div></section>
+    <section class="section journey-section" id="journey" aria-labelledby="journey-heading"><div class="wrap journey-layout"><div class="journey-title"><p class="section-index">05 / MY JOURNEY</p><h2 id="journey-heading">Built on <em>curiosity.</em><br>Grounded in science.</h2><p>My path from laboratory quality control into research and data analysis has shaped the way I work: precise in measurement, careful in interpretation and always ready to learn.</p></div><div class="timeline"><div class="timeline-entry"><span class="timeline-date">2026 — EXPECTED JAN 2027</span><div><h3>MSc Analytical Chemistry</h3><p class="timeline-place">Kingston University London</p><p>Advanced analytical techniques and a research project joining optical sensing, spectroscopy and computational analysis.</p></div></div><div class="timeline-entry"><span class="timeline-date">2024 — 2025</span><div><h3>Quality Control Officer</h3><p class="timeline-place">Colexa Biosensor Ltd · Lagos</p><p>Practical experience in quality processes, testing, traceable records and analytical measurements in a biosensor manufacturing environment.</p></div></div><div class="timeline-entry"><span class="timeline-date">OCT 2021 — APR 2022</span><div><h3>Industrial Trainee · Biochemistry</h3><p class="timeline-place">Nigerian Institute for Medical Research (NIMR) · Lagos, Nigeria</p><p>Completed industrial training in a biochemistry research setting, gaining insight into laboratory workflows and scientific research practice.</p></div></div><div class="timeline-entry"><span class="timeline-date">FOUNDATION</span><div><h3>BSc Chemistry</h3><p class="timeline-place">Olabisi Onabanjo University · Nigeria</p><p>Developed the scientific foundations that now inform my work in analytical chemistry and data.</p></div></div></div></div></section>
 
-    <section class="contact-section" id="contact" aria-labelledby="contact-heading"><div class="wrap contact-wrap"><div class="contact-top"><p class="section-index">05 / CONTACT</p><span>HAVE A QUESTION, AN IDEA, OR AN OPPORTUNITY?</span></div><h2 id="contact-heading">Let's make <em>sense</em><br>of something together<span>.</span></h2><p>I'm interested in graduate and early-career opportunities across scientific data, analytical chemistry, chemometrics and health informatics.</p><div class="contact-actions"><a class="button button-lime" href="mailto:Paulkennethuk@gmail.com?subject=Hello%20Paul%20%E2%80%94%20Portfolio%20enquiry">Send me an email <span aria-hidden="true">↗</span></a><button type="button" class="copy-email" id="copy-email" data-email="Paulkennethuk@gmail.com">Copy email <span aria-hidden="true">↗</span></button></div><div class="contact-toast" id="copy-status" role="status" aria-live="polite"></div><div class="contact-bottom"><a href="https://github.com/Paulifx0" target="_blank" rel="noopener noreferrer">GITHUB <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/paulobi/" target="_blank" rel="noopener noreferrer">LINKEDIN <span aria-hidden="true">↗</span></a><a href="mailto:Paulkennethuk@gmail.com">EMAIL <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading"><div class="wrap contact-wrap"><div class="contact-top"><p class="section-index">06 / CONTACT</p><span>HAVE A QUESTION, AN IDEA, OR AN OPPORTUNITY?</span></div><h2 id="contact-heading">Let's make <em>sense</em><br>of something together<span>.</span></h2><p>I'm interested in graduate and early-career opportunities across scientific data, analytical chemistry, chemometrics and health informatics.</p><div class="contact-actions"><a class="button button-lime" href="mailto:Paulkennethuk@gmail.com?subject=Hello%20Paul%20%E2%80%94%20Portfolio%20enquiry">Send me an email <span aria-hidden="true">↗</span></a><button type="button" class="copy-email" id="copy-email" data-email="Paulkennethuk@gmail.com">Copy email <span aria-hidden="true">↗</span></button></div><div class="contact-toast" id="copy-status" role="status" aria-live="polite"></div><div class="contact-bottom"><a href="https://github.com/Paulifx0" target="_blank" rel="noopener noreferrer">GITHUB <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/paulobi/" target="_blank" rel="noopener noreferrer">LINKEDIN <span aria-hidden="true">↗</span></a><a href="mailto:Paulkennethuk@gmail.com">EMAIL <span aria-hidden="true">↗</span></a></div></div></section>
   </main>
   <footer class="site-footer"><div class="wrap footer-inner"><a href="#top" class="footer-brand">P<span>.</span>K</a><span>© <span id="year">2026</span> PAUL KENNETH. BUILT WITH CURIOSITY.</span><a href="#top">BACK TO TOP ↑</a></div></footer>
 <script>
