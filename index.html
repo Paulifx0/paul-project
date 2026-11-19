@@ -45,67 +45,7 @@
 @media (max-width:520px){.hero-portrait{width:100%;max-width:390px}.portrait-frame{aspect-ratio:.9;border-radius:45% 45% 6px 6px}.portrait-footer{left:22px;right:22px;bottom:22px}.portrait-topline{top:21px;left:22px;right:22px}.portrait-footer strong{font-size:29px}.portrait-footer-mark{width:34px;height:34px}}
 
 </style>
-  <script defer>
-'use strict';
-
-// Mobile navigation. Menu links remain usable when JavaScript is unavailable.
-const menuButton = document.getElementById('nav-toggle');
-const navLinks = document.getElementById('nav-links');
-if (menuButton && navLinks) {
-  menuButton.addEventListener('click', () => {
-    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-    menuButton.setAttribute('aria-expanded', String(!expanded));
-    menuButton.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
-    navLinks.classList.toggle('is-open', !expanded);
-  });
-  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    navLinks.classList.remove('is-open');
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', 'Open navigation');
-  }));
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') {
-      navLinks.classList.remove('is-open');
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', 'Open navigation');
-    }
-  });
-}
-
-// Show only projects in the selected category.
-const filters = document.querySelectorAll('[data-filter]');
-const projectCards = document.querySelectorAll('[data-category]');
-filters.forEach(button => button.addEventListener('click', () => {
-  const selection = button.dataset.filter;
-  filters.forEach(filter => {
-    const active = filter === button;
-    filter.classList.toggle('is-active', active);
-    filter.setAttribute('aria-pressed', String(active));
-  });
-  projectCards.forEach(card => {
-    card.hidden = selection !== 'all' && !card.dataset.category.split(' ').includes(selection);
-  });
-}));
-
-// Copy the publicly listed contact email without needing a form or backend.
-const copyButton = document.getElementById('copy-email');
-const copyStatus = document.getElementById('copy-status');
-if (copyButton && copyStatus) {
-  copyButton.addEventListener('click', async () => {
-    const email = copyButton.dataset.email;
-    try {
-      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
-      await navigator.clipboard.writeText(email);
-      copyStatus.textContent = 'Email copied to clipboard.';
-    } catch (_error) {
-      copyStatus.textContent = `Copy this address: ${email}`;
-    }
-  });
-}
-
-document.getElementById('year').textContent = new Date().getFullYear();
-
-</script>
+  
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
@@ -208,5 +148,66 @@ document.getElementById('year').textContent = new Date().getFullYear();
     <section class="contact-section" id="contact" aria-labelledby="contact-heading"><div class="wrap contact-wrap"><div class="contact-top"><p class="section-index">05 / CONTACT</p><span>HAVE A QUESTION, AN IDEA, OR AN OPPORTUNITY?</span></div><h2 id="contact-heading">Let's make <em>sense</em><br>of something together<span>.</span></h2><p>I'm interested in graduate and early-career opportunities across scientific data, analytical chemistry, chemometrics and health informatics.</p><div class="contact-actions"><a class="button button-lime" href="mailto:Paulkennethuk@gmail.com?subject=Hello%20Paul%20%E2%80%94%20Portfolio%20enquiry">Send me an email <span aria-hidden="true">↗</span></a><button type="button" class="copy-email" id="copy-email" data-email="Paulkennethuk@gmail.com">Copy email <span aria-hidden="true">↗</span></button></div><div class="contact-toast" id="copy-status" role="status" aria-live="polite"></div><div class="contact-bottom"><a href="https://github.com/Paulifx0" target="_blank" rel="noopener noreferrer">GITHUB <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/paulobi/" target="_blank" rel="noopener noreferrer">LINKEDIN <span aria-hidden="true">↗</span></a><a href="mailto:Paulkennethuk@gmail.com">EMAIL <span aria-hidden="true">↗</span></a></div></div></section>
   </main>
   <footer class="site-footer"><div class="wrap footer-inner"><a href="#top" class="footer-brand">P<span>.</span>K</a><span>© <span id="year">2026</span> PAUL KENNETH. BUILT WITH CURIOSITY.</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+<script>
+'use strict';
+
+// Mobile navigation. Menu links remain usable when JavaScript is unavailable.
+const menuButton = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+if (menuButton && navLinks) {
+  menuButton.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!expanded));
+    menuButton.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+    navLinks.classList.toggle('is-open', !expanded);
+  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('is-open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation');
+  }));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      navLinks.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Open navigation');
+    }
+  });
+}
+
+// Show only projects in the selected category.
+const filters = document.querySelectorAll('[data-filter]');
+const projectCards = document.querySelectorAll('[data-category]');
+filters.forEach(button => button.addEventListener('click', () => {
+  const selection = button.dataset.filter;
+  filters.forEach(filter => {
+    const active = filter === button;
+    filter.classList.toggle('is-active', active);
+    filter.setAttribute('aria-pressed', String(active));
+  });
+  projectCards.forEach(card => {
+    card.hidden = selection !== 'all' && !card.dataset.category.split(' ').includes(selection);
+  });
+}));
+
+// Copy the publicly listed contact email without needing a form or backend.
+const copyButton = document.getElementById('copy-email');
+const copyStatus = document.getElementById('copy-status');
+if (copyButton && copyStatus) {
+  copyButton.addEventListener('click', async () => {
+    const email = copyButton.dataset.email;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(email);
+      copyStatus.textContent = 'Email copied to clipboard.';
+    } catch (_error) {
+      copyStatus.textContent = `Copy this address: ${email}`;
+    }
+  });
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
 </body>
 </html>
